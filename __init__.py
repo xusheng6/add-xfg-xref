@@ -50,7 +50,7 @@ def get_xfg_pointer(bv):
 	return xfg_pointer
 
 
-def add_xfg_xref(bv, function):
+def add_xfg_xref(bv):
 	if bv.view_type != 'PE':
 		log_warn('xfg only works with PE files')
 		return
@@ -78,4 +78,4 @@ def add_xfg_xref(bv, function):
 	bv.commit_undo_actions()
 
 
-PluginCommand.register_for_address("Add XFG Xref", "Add XFG Xref", add_xfg_xref)
+PluginCommand.register("Add XFG Xref", "Add XFG Xref", add_xfg_xref)
